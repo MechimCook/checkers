@@ -1,6 +1,6 @@
  defmodule Checkers.Validater do
   def valid_move?(%Checkers.Game{board: board, current_turn: turn}, {from_row, from_col} = from_cords, {to_row, to_col} = to_cords) do
-    {player, false} = piece = Enum.at(board, from_row) |> Enum.at(from_col)
+    {player, _is_king} = piece = Enum.at(board, from_row) |> Enum.at(from_col)
     target_cell = Enum.at(board, to_row) |> Enum.at(to_col)
     row_diff = from_row - to_row
 
