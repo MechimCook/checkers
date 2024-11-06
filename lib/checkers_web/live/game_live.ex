@@ -34,7 +34,7 @@ defmodule CheckersWeb.GameLive do
   end
 
   def handle_event("reset_game", _params, socket) do
-    {:ok, assign(socket, game: Game.new_game(), from: nil)}
+    {:noreply, assign(socket, game: Game.new_game(), from: nil)}
   end
 
   def render(assigns) do
