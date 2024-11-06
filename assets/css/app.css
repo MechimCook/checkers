@@ -1,0 +1,174 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Game Over Screen */
+.game-over-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+  }
+  
+  .game-over-screen h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .game-over-screen p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .game-over-screen button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .game-over-screen button:hover {
+    background-color: #218838;
+  }
+  
+
+.game-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    height: 100vh; 
+    padding: 0 20px;
+  }
+  
+  .turn-indicator {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .turn-indicator.left {
+    /* Align to the left side */
+    text-align: left;
+  }
+  
+  .turn-indicator.right {
+    /* Align to the right side */
+    text-align: right;
+  }
+  
+  .turn-text {
+    color: #000;
+  }
+  
+  .board-container {
+    display: flex;
+    justify-content: center; /* Center the board horizontally */
+    align-items: center; /* Center vertically */
+  }
+  
+  .selected {
+    background-color: rgba(0, 128, 0, 0.3); /* Highlight selected piece */
+  }
+
+.game {
+    text-align: center;
+    padding: 20px;
+  }
+  .board {
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+    grid-template-rows: repeat(8, 50px);
+    gap: 1px;
+    margin-top: 20px;
+    border: 2px solid #000;
+  }
+
+  
+  .cell {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .empty {
+    background-color: #f0f0f0;
+  }
+  
+  .player1 {
+    background-color: red;
+    border-radius: 50%;
+  }
+  
+  .player2 {
+    background-color: black;
+    border-radius: 50%;
+  }
+  
+  .cell.selected {
+    background-color: rgb(0, 4, 255);  /* Highlight the selected cell with a yellow background */
+    border: 2px solid black;    /* Add a border to the selected piece */
+    box-shadow: 0 0 5px 2px rgba(0, 17, 255, 0.7);
+  }
+
+/* For player 1's king (gold with red outline) */
+.king1 {
+    border: 3px solid red; /* Red outline */
+
+  }
+  .king1::before {
+    content: "♔"; /* Unicode crown symbol for player 1 */
+    position: absolute;
+    bottom: 1px;
+    font-size: 40px;
+    color: red;
+  }
+  
+  /* For player 2's king (gold with black outline) */
+  .king2 {
+    
+    border: 3px solid black; /* Black outline */
+  }
+  .king2::before {
+    content: "♕"; 
+    position: absolute;
+    bottom: 1px;
+    font-size: 40px; 
+    color: black;
+  }
+  
+  /* Add any other styling for the king pieces */
+  .king1, .king2 {
+    background-color: gold;
+    border-radius: 50%; /* Makes it round */
+    position: relative; /* To position the crown symbol */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+  }
+  
+  /* Optional: add a subtle hover effect on pieces */
+  .cell:hover {
+    border: 2px solid rgba(1, 87, 225, 0.1)
+  }
+  
+  
+  
