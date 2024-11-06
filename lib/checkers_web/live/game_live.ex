@@ -30,8 +30,11 @@ defmodule CheckersWeb.GameLive do
   end
 
   def handle_event("deselect", _params, socket) do
-    # Clear the selected piece (deselect)
     {:noreply, assign(socket, from: nil)}
+  end
+
+  def handle_event("deselect", _params, socket) do
+    {:ok, assign(socket, game: Game.new_game(), from: nil)}
   end
 
   def render(assigns) do
