@@ -33,7 +33,7 @@ defmodule CheckersWeb.GameLive do
     {:noreply, assign(socket, from: nil)}
   end
 
-  def handle_event("deselect", _params, socket) do
+  def handle_event("reset_game", _params, socket) do
     {:ok, assign(socket, game: Game.new_game(), from: nil)}
   end
 
